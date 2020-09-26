@@ -181,3 +181,11 @@
     width:100%;
   }
 }
+
+
+@media (max-width: 572px) {
+  .wrapper {
+    padding-left:0px;
+    padding-right:0px;
+  }
+}
