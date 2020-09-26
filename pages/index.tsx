@@ -25,6 +25,7 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data }) {
+  console.log(data);
   const [openFilter, setOpenFilter] = useState(true);
   const [filterState, setFilterState] = useState({
     year: "0000",
