@@ -3,7 +3,7 @@ import styles from "./Filter.module.css";
 
 
 const ListOfYears = Array(30).fill(0).map((_, idx) => 1990 + (idx * 1));
-export default ({ handleChangeFilterValue }) => {
+const Filter = ({ handleChangeFilterValue }) => {
   const [year, setYear] = useState("0000");
   const [launch, setLaunch] = useState("Yes");
   const [landing, setLanding] = useState("No");
@@ -90,3 +90,5 @@ export default ({ handleChangeFilterValue }) => {
     </>
   );
 };
+
+export default Filter;
