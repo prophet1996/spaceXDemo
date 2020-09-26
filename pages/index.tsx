@@ -82,7 +82,7 @@ export default function Home({ data }) {
             })
             .map((launchData) => (
               <a key={launchData.flight_id} className={styles.card}>
-                <img src={launchData.links.mission_patch_small}></img>
+                <img loading="lazy" src={launchData.links.mission_patch_small}></img>
 
                 <h3>
                   {launchData.mission_name} #{launchData.flight_number}
@@ -91,7 +91,7 @@ export default function Home({ data }) {
                 <ul>
                   {launchData.mission_id.length > 0 &&
                     launchData.mission_id.map((missionId) => (
-                      <li>{missionId}</li>
+                      <li key={missionId}>{missionId}</li>
                     ))}
                   {launchData.mission_id.length <= 0 && "N/A"}
                 </ul>

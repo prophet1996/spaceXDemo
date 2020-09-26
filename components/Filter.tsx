@@ -51,7 +51,8 @@ const Filter = ({ handleChangeFilterValue }) => {
           id="Yes-Launch"
           onClick={()=>handleChangeToggle("Launch","Yes")}
           name="Launch"
-        className={styles.chipButton}
+          className={`${styles.chipButton} ${launch==="Yes"?styles.shadow:""}` }
+
         value="Yes"
         />
 
@@ -61,7 +62,8 @@ const Filter = ({ handleChangeFilterValue }) => {
           id="No-Launch"
           onClick={()=>handleChangeToggle("Launch","No")}
           name="Launch"
-        className={styles.chipButton}
+          className={`${styles.chipButton} ${launch==="No"?styles.shadow:""}` }
+
         value="No"
         />
       <br />
@@ -73,7 +75,8 @@ const Filter = ({ handleChangeFilterValue }) => {
         type="button"
         name="Landing"
         value="Yes"
-        className={styles.chipButton}
+        className={`${styles.chipButton} ${landing==="Yes"?styles.shadow:""}` }
+
 
         onClick={()=>handleChangeToggle("Landing","Yes")}
       >
@@ -82,7 +85,7 @@ const Filter = ({ handleChangeFilterValue }) => {
         type="button"
         name="Landing"
         value="No"
-        className={styles.chipButton}
+        className={`${styles.chipButton} ${landing==="No"?styles.shadow:""}` }
         onClick={()=>handleChangeToggle("Landing","No")}
         >
       </input>
