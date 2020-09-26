@@ -7,6 +7,7 @@ Ability to filter through
 SEO optimised/Accessible Application
 Semantic html for layout
 lazy loading of images
+Very High lighthouse score
 ## Techinal Stack
 React.js
 Next.js Server Side rendering
@@ -22,3 +23,4 @@ Resons From deviation from original Design-
 * true/false changed to yes/no
 * Fliters not always visible on mobile
 * Alignment of next and filter buttons to suit the over all card    format  
+
