@@ -50,6 +50,7 @@ export default function Home({ data }) {
       <Head>
         <title>SpaceX Launch</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="Description" content="Owner: Ishank Sharma spaceX demo"></meta>
       </Head>
       <header className={styles.header}>
         <h2 className={styles.title}>SpacEx Launch Programs</h2>
@@ -82,7 +83,7 @@ export default function Home({ data }) {
             })
             .map((launchData) => (
               <a key={launchData.flight_id} className={styles.card}>
-                <img loading="lazy" src={launchData.links.mission_patch_small}></img>
+                <img alt={launchData.links.mission_patch_small} loading="lazy" src={launchData.links.mission_patch_small}></img>
 
                 <h3>
                   {launchData.mission_name} #{launchData.flight_number}
