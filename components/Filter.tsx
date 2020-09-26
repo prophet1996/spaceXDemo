@@ -36,8 +36,10 @@ const Filter = ({ handleChangeFilterValue }) => {
   };
   return (
     <>
+      
+      <label htmlFor="year">
       <h3 className={styles.title}>SpacEx Launch Programs</h3>
-
+      </label>
       <select className={styles.select} name="year" id="year" value={year} onChange={(e)=>handleChangeToggle("year",e.target.value)}>
         {ListOfYears.map(year=>
         <option value={year} key={year}>{year}</option>
@@ -45,57 +47,63 @@ const Filter = ({ handleChangeFilterValue }) => {
         <option value="0000">All Years</option>
       </select>
       <h3 className={styles.title}>Successful Launch</h3>
-      <label htmlFor="Launch"></label>
+      <label htmlFor="Launch-Yes">
 
         <input
           type="button"
           id="Launch"
           onClick={()=>handleChangeToggle("Launch","Yes")}
-          name="Launch"
+          name="Launch-Yes"
           className={`${styles.chipButton} ${launch==="Yes"?styles.shadow:""}` }
 
         value="Yes"
         />
-      <label htmlFor="Launch"></label>
+        </label>
+      <label htmlFor="Launch-No">
 
       
         <input
           type="button"
           id="Launch"
           onClick={()=>handleChangeToggle("Launch","No")}
-          name="Launch"
+          name="Launch-No"
           className={`${styles.chipButton} ${launch==="No"?styles.shadow:""}` }
 
         value="No"
         />
+        </label>
       <br />
       <h3 className={styles.title}>Successful Landing</h3>
 
 
-      <label htmlFor="Landing"></label>
+      <label htmlFor="Landing-Yes">
+
      
       <input
         type="button"
         name="Landing"
-        id="Landing"
+        id="Landing-Yes"
         value="Yes"
         className={`${styles.chipButton} ${landing==="Yes"?styles.shadow:""}` }
-
-
+        
+        
         onClick={()=>handleChangeToggle("Landing","Yes")}
-      >
+        >
       </input>
-      <label htmlFor="Landing"></label>
+        </label>
+      <label htmlFor="Landing-No">
 
       <input
         type="button"
         name="Landing"
-        id="Landing"
+        id="Landing-No"
         value="No"
         className={`${styles.chipButton} ${landing==="No"?styles.shadow:""}` }
         onClick={()=>handleChangeToggle("Landing","No")}
         >
       </input>
+
+      </label>
       <br />
     </>
   );
