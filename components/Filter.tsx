@@ -38,7 +38,7 @@ const Filter = ({ handleChangeFilterValue }) => {
     <>
       
       <label htmlFor="year">
-      <h3 className={styles.title}>SpacEx Launch Programs</h3>
+      <h3 className={styles.title}>Launch Year</h3>
       </label>
       <select className={styles.select} name="year" id="year" value={year} onChange={(e)=>handleChangeToggle("year",e.target.value)}>
         {ListOfYears.map(year=>
