@@ -2,22 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useState, useLayoutEffect } from "react";
 import {Filter} from "../components";
-
-const fetcher = (url) =>
-  fetch(url).then((r) =>
-    r.json().then((data) =>
-      data.map((d) => ({
-        ...d,
-        //lading data may not be available
-        land_success: !!(
-          d.rocket.first_stage &&
-          d.rocket.first_stage.cores &&
-          d.rocket.first_stage.cores[0] &&
-          d.rocket.first_stage.cores[0].land_success
-        ),
-      }))
-    )
-  );
+import { fetcher, debounce } from "../utils";
 
 export async function getServerSideProps() {
   const data = await fetcher("https://api.spacexdata.com/v3/launches");
@@ -26,16 +11,20 @@ export async function getServerSideProps() {
 
 export default function Home({ data }) {
   const [openFilter, setOpenFilter] = useState(true);
+  const [stateData,setData] = useState(data);
   const [filterState, setFilterState] = useState({
     year: "0000",
     landing: false,
     launch: true,
   });
+  const _updateSpaceData = async ()=>{
+   await debounce(async ()=>fetcher("https://api.spacexdata.com/v3/launches",setData),1000,true)();
+  }
   const handleChangeFilterValue = (newFilterValue) => {
     setFilterState(newFilterValue);
+    _updateSpaceData();
   };
   useLayoutEffect(()=>{
-
     window.history.pushState('', null,`?year=${filterState.year}&launch=${filterState.launch?"Yes":"No"}&landing=${filterState.landing?"Yes":"No"}`);
   },[])
 
@@ -78,7 +67,7 @@ export default function Home({ data }) {
       </aside>
       <main className={styles.main}>
         <div className={styles.grid}>
-          {data
+          {stateData
             .filter((launchData) => {
               let result = true;
               for (let i of booleanFilterFunctions)
