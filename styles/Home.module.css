@@ -220,15 +220,27 @@ flex:200px;
   grid-template-columns: repeat(4,1fr);
   grid-gap: 1em;
 }
-.aside{
-  margin-left: 1em;
-  /* formula for optimal acide size */
-  max-width: calc(19vw + (89vw - 1024px));
-}
+
 
 
   }
+@media (min-width:1024px) and (max-width:1100px) {
+  .aside{
+    max-width:calc(19vw + (134vw - 1440px))
+  }
+}
+@media (min-width:1110px) and (max-width:1200px) {
+  .aside{
+    max-width:calc(19vw + (127vw - 1440px))
+  }
+}
+@media (min-width:1200px) and (max-width:1440px) {
 
+.aside{
+  margin-left: 1em;
+  /* formula for optimal acide size */
+  max-width:calc(19vw + (119vw - 1440px))
+}}
 @media (min-width:1440px) {
 .wrapper{
   max-width: 1440px;
