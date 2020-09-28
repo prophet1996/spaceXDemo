@@ -11,7 +11,6 @@
 .grid {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -80,6 +79,10 @@
   transition: all 0.2s ease;
   padding:1rem;
   margin-top:2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .invisible{
@@ -187,6 +190,12 @@
   }
 }
 
+@media (min-width:1024px) and (max-width:1024px) {
+.card {
+  margin: 1rem 0;
+}
+
+  }
 
 @media (min-width:1440px) {
 .wrapper{

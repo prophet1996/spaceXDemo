@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import {Filter} from "../components";
 
 const fetcher = (url) =>
@@ -25,7 +25,6 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data }) {
-  console.log(data);
   const [openFilter, setOpenFilter] = useState(true);
   const [filterState, setFilterState] = useState({
     year: "0000",
@@ -35,6 +34,10 @@ export default function Home({ data }) {
   const handleChangeFilterValue = (newFilterValue) => {
     setFilterState(newFilterValue);
   };
+  useLayoutEffect(()=>{
+
+    window.history.pushState('', null,`?year=${filterState.year}&launch=${filterState.launch?"Yes":"No"}&landing=${filterState.landing?"Yes":"No"}`);
+  },[])
 
   //to apply filter functions in one loop
   const booleanFilterFunctions = [
@@ -82,8 +85,8 @@ export default function Home({ data }) {
                 result = result && i(launchData);
               return result;
             })
-            .map((launchData) => (
-              <a key={launchData.flight_id} className={styles.card}>
+            .map((launchData,id) => (
+              <a key={launchData.flight_id+""+id} className={styles.card}>
                 <img alt={launchData.links.mission_patch_small} loading="lazy" src={launchData.links.mission_patch_small}></img>
 
                 <h3>
