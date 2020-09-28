@@ -71,7 +71,7 @@ const Filter = ({ handleChangeFilterValue }) => {
             className={`${styles.chipButton} ${
               launch === "Yes" ? styles.shadow : ""
             }`}
-            value="0000"
+            value="All"
           />
         </label>
       </span>
