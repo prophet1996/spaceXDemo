@@ -5,7 +5,7 @@ import {Filter} from "../components";
 import { fetcher, debounce } from "../utils";
 
 export async function getServerSideProps() {
-  const data = await fetcher("https://api.spacexdata.com/v3/launches");
+  const data = await fetcher("https://api.spacexdata.com/v3/launches",(_)=>_);
   return { props: { data } };
 }
 
@@ -75,7 +75,7 @@ export default function Home({ data }) {
               return result;
             })
             .map((launchData,id) => (
-              <a key={launchData.flight_id+""+id} className={styles.card}>
+              <span key={launchData.flight_id+""+id} className={styles.card}>
                 <img alt={launchData.links.mission_patch_small} loading="lazy" src={launchData.links.mission_patch_small}></img>
 
                 <h3>
@@ -101,7 +101,7 @@ export default function Home({ data }) {
                   <b>Successful Landing: </b>
                   <i>{launchData.land_success ? "Yes" : "No"}</i>
                 </span>
-              </a>
+              </span>
             ))}
         </div>
       </main>

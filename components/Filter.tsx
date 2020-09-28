@@ -75,7 +75,10 @@ const Filter = ({ handleChangeFilterValue }) => {
           />
         </label>
       </span>
-      <h3 className={styles.title}>Successful Launch</h3>
+      <label htmlFor="year">
+        <h3 className={styles.title}>Successful Launch</h3>
+        <hr />
+      </label>
       <span className={styles.yearsList}>
         <label htmlFor="Launch-Yes">
           <input
@@ -102,8 +105,10 @@ const Filter = ({ handleChangeFilterValue }) => {
           />
         </label>
       </span>
-
-      <h3 className={styles.title}>Successful Landing</h3>
+      <label htmlFor="year">
+        <h3 className={styles.title}>Successful Landing</h3>
+        <hr />
+      </label>
 
       <span className={styles.yearsList}>
         <label htmlFor="Landing-Yes">
