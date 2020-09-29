@@ -11,7 +11,7 @@ This is for a showcase using spacexapi
 * Very High lighthouse score
 * dynamic routing
 * async req and debouncing for mobile devices
-* Markdown for readme :blush:
+* Descriptive Markdown for readme :blush:
 ## Techinal Stack
 * React.js
 * Next.js Server Side rendering
@@ -21,7 +21,8 @@ This is for a showcase using spacexapi
 
 Reasons From deviation from original Design- 
 * true/false changed to yes/no
-* Fliters not always visible on mobile
+* Fliters are collapsible
+* Button Color changed to black for high contrast for visually impaired 
 
 
 ![alt text](https://user-images.githubusercontent.com/16836510/94475071-318a7800-01ec-11eb-93a6-5f2734717f73.png)
