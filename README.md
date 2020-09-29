@@ -20,12 +20,7 @@ This is for a showcase using spacexapi
 * CSS Grid/Flexbox for responsive design
 
 Resons From deviation from original Design- 
-* ~Green Color changed to black for accesibility for visually impaired~
-* ~1 additional Breakpoint based on content size~
-* ~The Years section turned to select for accessibility otherwise
-    the screen reader would list all the years~
 * true/false changed to yes/no
 * Fliters not always visible on mobile
-* ~Alignment of next and filter buttons to suit the over all card    format~
 
 ![alt text](https://user-images.githubusercontent.com/16836510/94475071-318a7800-01ec-11eb-93a6-5f2734717f73.png)
