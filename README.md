@@ -19,8 +19,9 @@ This is for a showcase using spacexapi
 * Jest(React testing library) w/ babel for module transformation
 * CSS Grid/Flexbox for responsive design
 
-Resons From deviation from original Design- 
+Reasons From deviation from original Design- 
 * true/false changed to yes/no
 * Fliters not always visible on mobile
+
 
 ![alt text](https://user-images.githubusercontent.com/16836510/94475071-318a7800-01ec-11eb-93a6-5f2734717f73.png)
